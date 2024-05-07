@@ -15,7 +15,6 @@ function CustomButton(props) {
   var __borderColor = props.borderColor;
   var __borderRadius = props.borderRadius;
   var __borderWidth = props.borderWidth;
-  var __linearGradientColorTuple = props.linearGradientColorTuple;
   var __fullLength = props.fullLength;
   var onPress = props.onPress;
   var __rightIcon = props.rightIcon;
@@ -30,7 +29,6 @@ function CustomButton(props) {
   var leftIcon = __leftIcon !== undefined ? __leftIcon : "NoIcon";
   var rightIcon = __rightIcon !== undefined ? __rightIcon : "NoIcon";
   var fullLength = __fullLength !== undefined ? __fullLength : true;
-  var linearGradientColorTuple = __linearGradientColorTuple !== undefined ? Caml_option.valFromOption(__linearGradientColorTuple) : undefined;
   var borderWidth = __borderWidth !== undefined ? __borderWidth : 0;
   var borderRadius = __borderRadius !== undefined ? __borderRadius : 0;
   var borderColor = __borderColor !== undefined ? __borderColor : "#ffffff";
@@ -64,15 +62,6 @@ function CustomButton(props) {
         },
         buttonTextClass: tmp$1
       });
-  var backColor = linearGradientColorTuple !== undefined ? linearGradientColorTuple : (
-      buttonState === "Disabled" ? [
-          "#E7EAF1",
-          "#E7EAF1"
-        ] : [
-          "#0048a0",
-          "#0570de"
-        ]
-    );
   var disabled;
   disabled = buttonState === "Normal" ? false : true;
   var isdisabledColor;
@@ -150,7 +139,7 @@ function CustomButton(props) {
   return JsxRuntime.jsx(ReactNative.View, {
               style: [
                 {
-                  backgroundColor: backColor[0],
+                  backgroundColor: "#7435FC",
                   borderColor: borderColor,
                   borderRadius: borderRadius,
                   borderWidth: borderWidth,

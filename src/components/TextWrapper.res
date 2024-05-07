@@ -22,8 +22,11 @@ let make = (~text=?, ~textType: textType, ~children: option<React.element>=?) =>
 
   let renderStyle = switch textType {
   | HeadingBold =>
-    array([textSecondaryBold, textStyle(~fontSize=17., ~fontWeight=#500, ~letterSpacing=0.3, ())])
-  | Subheading => array([textSecondaryBold, textStyle(~fontSize=15., ())])
+    array([
+      textSecondaryBold,
+      textStyle(~fontSize=17., ~fontWeight=#800, ~letterSpacing=0.3, ~textAlign=#center, ()),
+    ])
+  | Subheading => array([textSecondaryBold, textStyle(~fontSize=15., ~textAlign=#center, ())])
   | SubheadingBold => array([textSecondaryBold, textStyle(~fontSize=15., ~fontWeight=#500, ())])
   | CardText => array([textStyle(~fontSize=15., ~fontWeight=#400, ~color=component.color, ())])
   | ModalText => array([textStyle(~fontSize=14., ~letterSpacing=0.5, ()), textSecondary])

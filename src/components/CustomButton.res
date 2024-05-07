@@ -64,17 +64,6 @@ let make = (
   // | Medium => 16.
   // }
 
-  let backColor = switch linearGradientColorTuple {
-  | Some(tuple) => tuple
-  | None =>
-    switch buttonState {
-    | Normal => ("#0048a0", "#0570de")
-    | LoadingButton => ("#0048a0", "#0570de")
-    | Completed => ("#0048a0", "#0570de")
-    | Disabled => ("#E7EAF1", "#E7EAF1")
-    }
-  }
-
   // let iconColor = switch buttonState {
   // | Normal => "white"
   // | Loading => "#bbbbbb"
@@ -91,10 +80,9 @@ let make = (
   | _ => false
   }
 
-  let loaderIconColor = switch buttonType {
-  | Primary => Some(payNowButtonTextColor)
-  }
-  let (bgColor1, _) = backColor
+  // let loaderIconColor = switch buttonType {
+  // | Primary => Some(payNowButtonTextColor)
+  // }
 
   let fillStyle = viewStyle(
     ~position=#absolute,
@@ -145,7 +133,7 @@ let make = (
         ~borderWidth,
         ~borderColor,
         // ~overflow=#hidden,
-        ~backgroundColor=bgColor1,
+        ~backgroundColor="#7435FC",
         (),
       ),
       styles["lengthStyle"],

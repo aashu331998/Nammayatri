@@ -20,8 +20,9 @@ function TextWrapper(props) {
             textSecondaryBold,
             {
               fontSize: 17,
-              fontWeight: 500,
-              letterSpacing: 0.3
+              fontWeight: 800,
+              letterSpacing: 0.3,
+              textAlign: "center"
             }
           ];
           break;
@@ -29,7 +30,8 @@ function TextWrapper(props) {
           renderStyle = [
             textSecondaryBold,
             {
-              fontSize: 15
+              fontSize: 15,
+              textAlign: "center"
             }
           ];
           break;
