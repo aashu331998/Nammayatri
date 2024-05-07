@@ -26,10 +26,10 @@ module RootStackScreen = {
   let make = () => {
     let (flow, setFlow) = React.useState(_ => SplashScreen)
     React.useEffect0(() => {
-      let _ = setTimeout(() => {
+      setTimeout(() => {
         setFlow(_ => CustomerOnboarding)
         ()
-      }, 1000)
+      }, 1500)->ignore
       ()
       None
     })

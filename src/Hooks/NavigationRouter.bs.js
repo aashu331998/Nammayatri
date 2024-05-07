@@ -71,7 +71,7 @@ function NavigationRouter$RootStackScreen(props) {
                   setFlow(function (param) {
                         return "CustomerOnboarding";
                       });
-                }), 1000);
+                }), 1500);
         }), []);
   var tmp;
   switch (match[0]) {
