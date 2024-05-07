@@ -34,6 +34,50 @@ let carouselItems: array<carouselItem> = [
     svgString: GettingStartted4.svg,
   },
 ]
+
+module RenderItem = {
+  @react.component
+  let make = (~carouselItems, ~index) => {
+    let (loading, setLoading) = React.useState(_ => true)
+    React.useEffect0(() => {
+      setLoading(_ => false)
+      None
+    })
+    <View style={viewStyle(~flex=1., ~alignItems=#center, ~justifyContent=#center, ())}>
+      {loading
+        ? <ActivityIndicator style={viewStyle(~width=100.->pct, ~height=75.->pct, ())} />
+        : <Svg.SvgXml
+            onError={() => {
+              ()
+            }}
+            onLoad={() => {
+              setLoading(_ => false)
+            }}
+            xml={(carouselItems[index]->Option.getOr(defaultVal)).svgString}
+            width="100%"
+            height="75%"
+            fill="red"
+          />}
+      <Space />
+      <View
+        style={viewStyle(
+          ~alignItems=#center,
+          ~justifyContent=#center,
+          ~paddingHorizontal=20.->dp,
+          (),
+        )}>
+        <TextWrapper
+          textType={HeadingBold} text=(carouselItems[index]->Option.getOr(defaultVal)).heading
+        />
+        <Space />
+        <TextWrapper
+          textType={Subheading} text=(carouselItems[index]->Option.getOr(defaultVal)).subHeading
+        />
+      </View>
+    </View>
+  }
+}
+
 @react.component(: Core.screenProps)
 let make = (~navigation, ~route as _) => {
   <View
@@ -66,41 +110,11 @@ let make = (~navigation, ~route as _) => {
           height={Dimensions.get(#screen).height /. 1.6}
           autoPlay=true
           data=carouselItems
+          autoPlayInterval=2500
           scrollAnimationDuration=1000
           onSnapToItem={_ => ()}
           renderItem={({index}) => {
-            <View style={viewStyle(~flex=1., ~alignItems=#center, ~justifyContent=#center, ())}>
-              <Svg.SvgXml
-                onError={() => {
-                  ()
-                }}
-                onLoad={() => {
-                  ()
-                }}
-                xml={(carouselItems[index]->Option.getOr(defaultVal)).svgString}
-                width="100%"
-                height="75%"
-                fill="red"
-              />
-              <Space />
-              <View
-                style={viewStyle(
-                  ~alignItems=#center,
-                  ~justifyContent=#center,
-                  ~paddingHorizontal=20.->dp,
-                  (),
-                )}>
-                <TextWrapper
-                  textType={HeadingBold}
-                  text=(carouselItems[index]->Option.getOr(defaultVal)).heading
-                />
-                <Space />
-                <TextWrapper
-                  textType={Subheading}
-                  text=(carouselItems[index]->Option.getOr(defaultVal)).subHeading
-                />
-              </View>
-            </View>
+            <RenderItem carouselItems index />
           }}
         />
       </View>

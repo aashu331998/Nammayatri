@@ -6,6 +6,7 @@ module Carousel = {
     ~width: float,
     ~height: float,
     ~autoPlay: bool,
+    ~autoPlayInterval: int,
     ~data: array<'item>,
     ~scrollAnimationDuration: int,
     ~onSnapToItem: int => unit,
