@@ -3,7 +3,7 @@
 open ReactNavigation
 open ReactNative
 
-module ModalScreen = {
+module MainApp = {
   @react.component(: Core.screenProps)
   let make = (~navigation as _, ~route as _) => <Text> {"Hello From Modal"->React.string} </Text>
 }
@@ -45,9 +45,7 @@ module RootStackScreen = {
         | CustomerOnboarding =>
           <Screen name="CustomerOnboarding" component=CustomerOnboarding.make />
         | MainApp =>
-          <Screen name="Modal">
-            {({navigation, route}) => <ModalScreen navigation route />}
-          </Screen>
+          <Screen name="MainApp"> {({navigation, route}) => <MainApp navigation route />} </Screen>
         }}
       </Navigator>
     </Native.NavigationContainer>

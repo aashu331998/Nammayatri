@@ -10,14 +10,14 @@ import * as JsxRuntime from "react/jsx-runtime";
 import * as Stack$ReactNavigation from "rescript-react-navigation/src/Stack.bs.js";
 import * as Native from "@react-navigation/native";
 
-function NavigationRouter$ModalScreen(props) {
+function NavigationRouter$MainApp(props) {
   return JsxRuntime.jsx(ReactNative.Text, {
               children: "Hello From Modal"
             });
 }
 
-var ModalScreen = {
-  make: NavigationRouter$ModalScreen
+var MainApp = {
+  make: NavigationRouter$MainApp
 };
 
 var include = Stack$ReactNavigation.Make({});
@@ -89,9 +89,9 @@ function NavigationRouter$RootStackScreen(props) {
         break;
     case "MainApp" :
         tmp = JsxRuntime.jsx($$Screen$1.make, {
-              name: "Modal",
+              name: "MainApp",
               children: (function (param) {
-                  return JsxRuntime.jsx(NavigationRouter$ModalScreen, {
+                  return JsxRuntime.jsx(NavigationRouter$MainApp, {
                               navigation: param.navigation,
                               route: param.route
                             });
@@ -123,7 +123,7 @@ var RootStackScreen = {
 };
 
 export {
-  ModalScreen ,
+  MainApp ,
   CustomerOnboarding ,
   RootStackScreen ,
 }

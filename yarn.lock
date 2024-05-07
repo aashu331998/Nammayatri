@@ -6185,6 +6185,11 @@ rescript-react-navigation@^6.1.0:
   resolved "https://registry.yarnpkg.com/rescript-react-navigation/-/rescript-react-navigation-6.1.0.tgz#a20522d11229e102d470669ad59660fa21417b60"
   integrity sha512-AmrO77rLiUWiBgt2HHp1ClxeLTdnE3IpJylpRCePbG8TyW6/6BFzrLzv44d1aLDHP3ICjiYudEn7VDEgY8FTHA==
 
+rescript-reanimated@^2.3.12:
+  version "2.3.12"
+  resolved "https://registry.yarnpkg.com/rescript-reanimated/-/rescript-reanimated-2.3.12.tgz#cadbea000be9be85af81897c6b0d73ce923b4732"
+  integrity sha512-C3oFZRfOXFV733f2bXDeANfwGIOx8TYfrtUkYbNQmNDja4rhby9ZH/BfZ+6knyO3OGMZO0WdtrQdmKbC/1qwZA==
+
 rescript@^11.1.0:
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/rescript/-/rescript-11.1.0.tgz#68dec0b3cbc456c1f9c8e4f10bda6fae49bf7f92"
